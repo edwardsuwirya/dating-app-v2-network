@@ -24,7 +24,8 @@ let package = Package(
         // Targets can depend on other targets in this package, and on products in packages this package depends on.
         .target(
             name: "BaseNetworkLibrary",
-            dependencies: ["Moya","Swinject"]),
+            dependencies: ["Moya","Swinject",.product(name: "RxMoya", package: "Moya")]),
+            
         .testTarget(
             name: "BaseNetworkLibraryTests",
             dependencies: ["BaseNetworkLibrary"]),

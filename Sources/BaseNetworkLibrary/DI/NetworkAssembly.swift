@@ -14,6 +14,6 @@ public class NetworkAssembly: Assembly{
     public func assemble(container: Container) {
         container.register(MoyaProvider<DatingAppApi>.self){ _ in
             MoyaProvider<DatingAppApi>()
-        }
+        }.inObjectScope(.container)
     }
 }
